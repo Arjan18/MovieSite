@@ -1,0 +1,27 @@
+<div class="login">
+    <div class="wrapper">
+      <div class="title"><span>Edit your Profile</span></div>
+      <%- include ("./partials/messages"); %>
+      <form action="/users/edit"+user.id method="PUT">
+        <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" class="form-control" value="<%= user.name %>" 
+            name="name"> 
+          </div>
+          <div class="row">
+            <i class="fas fa-at"></i>
+            <input type="text" class="form-control" value="<%= user.email %>" 
+            name="email"> 
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" class="form-control" value="<%= user.username %>" 
+            name="username"> 
+          </div>
+
+        <div class="row button">
+        <input type="submit" value="Update Details">
+        </div>
+      </form>
+    </div>
+  </div>

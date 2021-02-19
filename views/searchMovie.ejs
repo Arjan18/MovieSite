@@ -1,0 +1,20 @@
+  <div class="login">
+    <div class="wrapper">
+      <div class="title"><span>Search Movie</span></div>
+      <%- include ("./partials/messages"); %>
+      <form action="/movie-router/movies" method="GET">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search for Films"
+            class="search"
+          />
+          <button class="search-btn" type="submit">Submit</button>
+      <div class="imae"></div>
+    </form>
+
+       
+    </div>
+  </div>
+  
