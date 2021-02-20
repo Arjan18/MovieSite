@@ -114,7 +114,7 @@ app.use(function(req, res, next) {
 //Routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
-app.use('/movie-router', require('./routes/movie-router'));
+
 
 //TO ACCESS HTML FILES
 app.use(express.static(__dirname));
