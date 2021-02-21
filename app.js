@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const fileUpload = require('express-fileupload');
 
 //Chat App Stuff
 const path = require('path');
@@ -95,6 +96,8 @@ app.use(
       saveUninitialized: true
     })
   );
+
+  app.use(fileUpload());
 
 // Passport middleware
 app.use(passport.initialize());

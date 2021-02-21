@@ -4,11 +4,12 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 
+
 //Film Model
 const Film = require('../models/Film');
 
 // Film Page
-router.get('/movies', (req, res) => res.render('movies'));
+router.get('/films', (req, res) => res.render('films'));
 
 router.get("/films/:id", function (req, res) {
     var id = req.params.id;
@@ -24,7 +25,7 @@ router.get("/films/:id", function (req, res) {
                 releaseDate: foundFilm.releaseDate,
                 genre: foundFilm.genre,
                 director: foundFilm.director,
-
+                trailer: foundFilm.trailer,
                 posterFile: foundFilm.posterFile
             });
         }
@@ -57,7 +58,7 @@ router.post("/addfilm", function(req, res){
     var imageFile = req.files.imagefile;
 
     //Using the files to call upon the method to move that file to a folder
-    imageFile.mv("../public/films/thumbnails/" + imageFile.name, function(error){
+    imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
         if(error){
             console.log("Couldn't upload the image file");
             console.log(error);
@@ -84,7 +85,7 @@ router.post("/addfilm", function(req, res){
         }
 
     });
-    res.redirect("/FilmList");
+    res.redirect("/films/FilmList");
 });
 
 module.exports = router;

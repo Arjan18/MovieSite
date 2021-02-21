@@ -4,7 +4,7 @@
     <% for(var i = 0;i < filmsList.length; i++){ %>
     <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="films/thumbnails/<%= filmsList[i].posterFile %>" style="height: 400px">
+            <img class="card-img-top" src="public/filmsimages/<%= filmsList[i].imageFile %>" style="height: 400px">
             <div class="card-body">
             <h5 class="card-title"><%= filmsList[i].title %></h5>
             <p class="card-text"> <%= filmsList[i].name %></p>
