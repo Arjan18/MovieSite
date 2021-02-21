@@ -1,0 +1,16 @@
+<h1>Films:</h1>
+ 
+<div class="row">
+    <% for(var i = 0;i < filmsList.length; i++){ %>
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="films/thumbnails/<%= filmsList[i].posterFile %>" style="height: 400px">
+            <div class="card-body">
+            <h5 class="card-title"><%= filmsList[i].title %></h5>
+            <p class="card-text"> <%= filmsList[i].name %></p>
+            <a href="/film/<%= filmsList[i].id %>" class="btn btn-primary"></a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
