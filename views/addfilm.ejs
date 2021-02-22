@@ -5,38 +5,31 @@
       <form action="/films/addfilm" method="POST" enctype="multipart/form-data">
         <div class="row">
           <i class="fas fa-user"></i>
-          <input type="name" id="name" name="name" placeholder="Enter Name" class="form-control" 
-          value="<%= typeof name != 'undefined' ? name : '' %>" />
+          <input type="name" id="name" name="name" placeholder="Enter Name" class="form-control" />
         </div>
         <div class="row">
           <i class="fas fa-at"></i>
-          <input type="text" id="synopsis" name="synopsis" placeholder="Enter Synopsis" class="form-control" 
-          value="<%= typeof synopsis != 'undefined' ? synopsis : '' %>" />
+          <input type="text" id="synopsis" name="synopsis" placeholder="Enter Synopsis" class="form-control"/>
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="runTime" name="runTime" placeholder="Enter runTime" class="form-control" 
-            value="<%= typeof runTime != 'undefined' ? runTime : '' %>" />
+            <input type="text" id="runTime" name="runTime" placeholder="Enter runTime" class="form-control" />
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="genre" name="genre" placeholder="Enter genre" class="form-control" 
-            value="<%= typeof genre != 'undefined' ? genre : '' %>" />
+            <input type="text" id="genre" name="genre" placeholder="Enter genre" class="form-control"/>
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="releaseDate" name="releaseDate" placeholder="Enter releaseDate" class="form-control" 
-            value="<%= typeof releaseDate != 'undefined' ? releaseDate : '' %>" />
+            <input type="text" id="releaseDate" name="releaseDate" placeholder="Enter releaseDate" class="form-control" />
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="director" name="director" placeholder="Enter director" class="form-control" 
-            value="<%= typeof director != 'undefined' ? director : '' %>" />
+            <input type="text" id="director" name="director" placeholder="Enter director" class="form-control" />
         </div>
         <div class="row">
           <i class="fas fa-at"></i>
-          <input type="text" id="trailer" name="director" placeholder="Enter trailer link" class="form-control" 
-          value="<%= typeof trailer != 'undefined' ? trailer : '' %>" />
+          <input type="text" id="trailer" name="trailer" placeholder="Enter trailer link" class="form-control" />
       </div>
         <div class="row">
             <input type="file" class="custom-file-input" id="imageInput" aria-describedby="inputGroupFileAddon01" name="imagefile">

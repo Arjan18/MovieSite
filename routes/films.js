@@ -51,7 +51,7 @@ router.get("/addfilm", function(req, res){
     res.render("addfilm");
 });
 
-router.post("/addfilm", function(req, res){
+router.post("/addfilm", (req, res) =>{
     var data = req.body;
 
     //a variable representation of the files
