@@ -1,15 +1,26 @@
-<h1>Films:</h1>
- 
-<div class="row">
-    <% for(var i = 0;i < filmsList.length; i++){ %>
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../public/filmsimages/<%= filmsList[i].posterFile %>" style="height: 400px">
-            <div class="card-body">
-            <p class="card-text"> <%= filmsList[i].name %></p>
-            <a href="films/<%= filmsList[i].id %>" class="btn btn-primary"></a>
-            </div>
+<nav>            
+    <div class="menu-icon"><span class="fas fa-bars"></span></div>
+    <div class="logo">MovieSite</div>
+        <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Television</a></li>
+            <li><a href="/films/addfilm">Add Movies</a></li>
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/register">Register</a></li>
         </div>
-    </div>
-    <% } %>
-</div>
+
+        <div class="search-icon"><span class=""></span></div>
+        <div class="cancel-icon"><span class="fas fa-times"></span></div>
+
+</nav>
+        <div class="item-list">
+            <li class="item">
+            <% for(var i = 0;i < filmsList.length; i++){ %>
+                <div class="item-image"><img src="../public/filmsimages/<%= filmsList[i].posterFile %>" style="height:325px;width:240px"></div>
+              <div class="item-detail">
+                  <b><a href="films/<%= filmsList[i].id %>"><%= filmsList[i].name %></a></b>
+                </div>
+            </li>
+            <% } %>
+        </div>
