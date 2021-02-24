@@ -25,6 +25,7 @@ router.get("/films/:id", function (req, res) {
                 releaseDate: foundFilm.releaseDate,
                 genre: foundFilm.genre,
                 director: foundFilm.director,
+                rating: foundFilm.rating,
                 trailer: foundFilm.trailer,
                 posterFile: foundFilm.posterFile
             });
@@ -75,6 +76,7 @@ router.post("/addfilm", (req, res) =>{
         genre: data.genre,
         trailer: data.trailer,
         director: data.director,
+        rating: data.rating,
         posterFile: imageFile.name
     }, function(error, data){
         if(error){
