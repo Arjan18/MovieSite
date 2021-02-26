@@ -118,6 +118,7 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/films', require('./routes/films'));
+app.use('/shows', require('./routes/shows'));
 
 
 //TO ACCESS HTML FILES

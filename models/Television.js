@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
-const filmSchema = new mongoose.Schema({
+const televisionSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
       },
-    synopsis: {
+    overview: {
         type: String,
         required: true
     },
-    runTime: {
+    seasons: {
         type: Number,
         required: true
     },
-    releaseDate: {
-        type: String,
+    episodes: {
+        type: Number,
         required: true
     },
     genre: {
@@ -29,7 +29,7 @@ const filmSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    director: {
+    creator: {
         type: String,
         required: true
     },
@@ -37,8 +37,16 @@ const filmSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    releaseYear: {
+        type: String,
+        required: true
+    },
+    network: {
+        type: String,
+        required: true
+    },
 });
 
-const Film = mongoose.model("Film", filmSchema);
+const Show = mongoose.model("Show", televisionSchema);
 
-module.exports = Film;
+module.exports = Show;

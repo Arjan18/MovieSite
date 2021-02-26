@@ -1,27 +1,27 @@
 <div class="login">
     <div class="wrapper">
-      <div class="title"><span>Add Film</span></div>
+      <div class="title"><span>Add TV Show</span></div>
       <%- include ("./partials/messages"); %>
-      <form action="/films/addfilm" method="POST" enctype="multipart/form-data">
+      <form action="/shows/addshows" method="POST" enctype="multipart/form-data">
         <div class="row">
           <i class="fas fa-user"></i>
           <input type="text" id="name" name="name" placeholder="Enter Name" class="form-control" />
         </div>
         <div class="row">
           <i class="fas fa-at"></i>
-          <input type="text" id="synopsis" name="synopsis" placeholder="Enter Synopsis" class="form-control"/>
+          <input type="text" id="overview" name="overview" placeholder="Enter overview" class="form-control"/>
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="runTime" name="runTime" placeholder="Enter runTime" class="form-control" />
+            <input type="number" id="seasons" name="seasons" placeholder="Enter No of Seasons" class="form-control" />
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="genre" name="genre" placeholder="Enter genre" class="form-control"/>
+            <input type="number" id="episodes" name="episodes" placeholder="Enter No of Episodes" class="form-control"/>
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="releaseDate" name="releaseDate" placeholder="Enter releaseDate" class="form-control" />
+            <input type="text" id="releaseYear" name="releaseYear" placeholder="Enter releaseYear" class="form-control" />
         </div>
         <div class="row">
           <i class="fas fa-at"></i>
@@ -29,7 +29,15 @@
         </div>
         <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" id="director" name="director" placeholder="Enter director" class="form-control" />
+            <input type="text" id="genre" name="genre" placeholder="Enter genre" class="form-control" />
+        </div>
+        <div class="row">
+            <i class="fas fa-at"></i>
+            <input type="text" id="network" name="network" placeholder="Enter network" class="form-control" />
+          </div>
+        <div class="row">
+            <i class="fas fa-at"></i>
+            <input type="text" id="creator" name="creator" placeholder="Enter creator" class="form-control" />
         </div>
         <div class="row">
           <i class="fas fa-at"></i>
@@ -42,7 +50,7 @@
 
         </div>
         <div class="row button">
-        <input type="submit" value="Add Film">
+        <input type="submit" value="Add Show">
         </div>
       </form>
     </div>
