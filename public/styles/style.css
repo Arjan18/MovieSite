@@ -755,6 +755,10 @@ a {
     color: black;
   }
 
+
+
+
+  
 /* Movie Pages */
 
 .container1 {
@@ -1933,72 +1937,4 @@ a {
   
 
 
-
-/* Film List
-      li.item {
-        width: 27%;
-        height: 20rem;
-        margin: 2rem;
-        background-color: #FFFFFF;
-        display: inline-block;
-        position: relative;
-        margin-bottom: 4rem;
-        border-radius: 4px 4px 0 0;
-        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
-      }
-      
-      li:hover {
-        box-shadow: 10px 14px 45px rgba(0, 0, 0, 0.1);
-      }
-      
-      li .item-image {
-        position: relative;
-        line-height: 20rem;
-        font-size: 5rem;
-        text-align: center;
-      }
-      
-      li .item-detail {
-        padding: 0 1rem;
-        left: 0px;
-        top: 100%;
-        position: absolute;
-        height: 50px;
-        line-height: 50px;
-        width: 100%;
-        background-color: #f2f2f2;
-        font-size: 1rem;
-        font-weight: strong;
-        text-align: center;
-        color: #314455;
-      
-      }
-      li .item-detail:after {
-          content: "";
-          display: table;
-          clear: both;
-      }
-      
-      li a {
-        font-size: 1rem;
-        text-decoration: none;
-        color: #666;
-      }
-      
-      li div {
-        position: absolute;
-      }
-      
-      
-      @media screen and (max-width: 68.125em) {
-        li.item {
-          width: 41%;
-        }
-      }
-      
-      @media screen and (max-width: 46.125em) {
-        li.item {
-          width: 80%;
-        }
-      }
 

@@ -14,13 +14,66 @@
 
 </nav>
 
-        <div class="item-list">
-            <li class="item">
+        <section id="latest">
             <% for(var i = 0;i < filmsList.length; i++){ %>
-                <div class="item-image"><img src="../public/filmsimages/<%= filmsList[i].posterFile %>" style="height:325px;width:240px"></div>
-              <div class="item-detail">
-                  <b><a href="films/<%= filmsList[i].id %>"><%= filmsList[i].name %></a></b>
+            <!--slider-->
+            <ul id="autoWidth2" class="cs-hidden">
+            <!--slide-box-1-->
+            <li class="item-a">
+                <div class="latest-box">
+                <div class="latest-b-img">
+                    <img src="../public/filmsimages/<%= filmsList[i].posterFile %>" onclick="location.href='films/<%= filmsList[i].id %>'">
+                    <b><a href="films/<%= filmsList[i].id %>"></a></b>
+                </div>
                 </div>
             </li>
             <% } %>
-        </div>
+            
+           
+</section>
+            <!-- <script>
+                $(document).ready(function() {
+                $('#autoWidth,#autoWidth2').lightSlider({
+                    autoWidth:true,
+                    loop:true,
+                    onSliderLoad: function() {
+                        $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+                    } 
+                });  
+                });
+</script> -->
+<script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+                
+menuBtn.onclick = ()=>{
+    items.classList.add("active");
+    menuBtn.classList.add("hide");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}
+                    
+cancelBtn.onclick = ()=>{
+    items.classList.remove("active");
+    menuBtn.classList.remove("hide");
+    searchBtn.classList.remove("hide");
+    cancelBtn.classList.remove("show");
+    cancelBtn.style.color = "#c96567";
+    form.classList.remove("active");
+}
+
+searchBtn.onclick = ()=>{
+    form.classList.add("active");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}
+</script>
+                    
+<!--footer-->
+<footer>
+    <p>&copy; Copyright 2020 - Arjan Mahil Inc</p>
+</footer>
+                    
