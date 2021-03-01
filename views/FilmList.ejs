@@ -12,18 +12,18 @@
         <div class="search-icon"><span class=""></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
 
+        
 </nav>
-<% for(var i = 0;i < filmsList.length; i++){ %>
-    <div class="responsive">
-        <div class="gallery">
-            <img src="../public/filmsimages/<%= filmsList[i].posterFile %>">
-        </div>
-            <div class="desc">
-                <b><a href="films/<%= filmsList[i].id %>"><%= filmsList[i].name %></a></b>
-            </div>
-       
+    <div class="item-list">
+        <li class="item">
+        <% for(var i = 0;i < filmsList.length; i++){ %>
+            <div class="item-image"><img src="../public/filmsimages/<%= filmsList[i].posterFile %>" 
+                onclick="location.href='films/<%= filmsList[i].id %>'"
+            style="height:350px;width:250px;padding-left:10px;padding-bottom:5px;"></div>
+        </li>
+        <% } %>
     </div>
-         <% } %>
+
 <script>
     const menuBtn = document.querySelector(".menu-icon span");
     const searchBtn = document.querySelector(".search-icon");

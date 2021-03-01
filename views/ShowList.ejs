@@ -14,13 +14,12 @@
 
 </nav>
 
-        <div class="item-list">
-            <li class="item">
-            <% for(var i = 0;i < showsList.length; i++){ %>
-                <div class="item-image"><img src="../public/TVimages/<%= showsList[i].posterFile %>" style="height:325px;width:240px"></div>
-              <div class="item-detail">
-                  <b><a href="shows/<%= showsList[i].id %>"><%= showsList[i].name %></a></b>
-                </div>
-            </li>
-            <% } %>
-        </div>
+    <div class="item-list">
+        <li class="item">
+        <% for(var i = 0;i < showsList.length; i++){ %>
+            <div class="item-image"><img src="../public/TVimages/<%= showsList[i].posterFile %>" 
+                onclick="location.href='shows/<%= showsList[i].id %>'"
+                style="height:350px;width:250px;padding-left:10px;padding-bottom:5px;"></div>
+        </li>
+        <% } %>
+    </div>

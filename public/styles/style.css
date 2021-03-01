@@ -647,44 +647,19 @@ a {
 
 
 
-/*film list */
-.gallery {
-  border: 1px solid #ccc;
-  border-radius: 30px;  
-  display: grid;
+/*content list */
+
+.item-list{
+  display: flex;
+  flex-wrap: wrap;
+  vertical-align: middle;
+  padding: 25px;
+  list-style-type: none;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #314455;
 }
-  
-.gallery img {
-    width: 100%;
-    height: auto;
+
+.item-list .item-image{
+  border-radius: 30px;
 }
-  
-.desc {
-    padding: 15px;
-    text-align: center;
-}
-  
-.responsive {
-    padding: 0 6px;
-    float: left;
-    width: 25%;
-}
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 50%;
-      margin: 6px 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-  }
-  
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
