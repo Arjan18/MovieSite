@@ -13,35 +13,19 @@
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
 
 </nav>
+<% for(var i = 0;i < filmsList.length; i++){ %>
+    <div class="responsive">
+        
+        <div class="gallery">
+            <img src="../public/filmsimages/<%= filmsList[i].posterFile %>"alt="Cinque Terre" width="500" height="240">
+        </div>
+            <div class="desc">
+                <b><a href="films/<%= filmsList[i].id %>"><%= filmsList[i].name %></a></b>
+            </div>
+        </div>
+        <% } %>
+    </div>
 
-        <section id="latest">
-            <% for(var i = 0;i < filmsList.length; i++){ %>
-            <!--slider-->
-            <ul id="autoWidth2" class="cs-hidden">
-            <!--slide-box-1-->
-            <li class="item-a">
-                <div class="latest-box">
-                <div class="latest-b-img">
-                    <img src="../public/filmsimages/<%= filmsList[i].posterFile %>" onclick="location.href='films/<%= filmsList[i].id %>'">
-                    <b><a href="films/<%= filmsList[i].id %>"></a></b>
-                </div>
-                </div>
-            </li>
-            <% } %>
-            
-           
-</section>
-            <!-- <script>
-                $(document).ready(function() {
-                $('#autoWidth,#autoWidth2').lightSlider({
-                    autoWidth:true,
-                    loop:true,
-                    onSliderLoad: function() {
-                        $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
-                    } 
-                });  
-                });
-</script> -->
 <script>
     const menuBtn = document.querySelector(".menu-icon span");
     const searchBtn = document.querySelector(".search-icon");
