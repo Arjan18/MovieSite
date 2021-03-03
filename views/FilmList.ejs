@@ -2,7 +2,7 @@
     <div class="menu-icon"><span class="fas fa-bars"></span></div>
     <div class="logo">MovieSite</div>
         <div class="nav-items">
-            <li><a href="/Home">Home</a></li>
+            <li><a href="http://localhost:5000">Home</a></li>
             <li><a href="/films/FilmList">Movies</a></li>
             <li><a href="/shows/ShowList">Television</a></li>
             <li><a href="/users/login">Login</a></li>
@@ -19,7 +19,7 @@
         <% for(var i = 0;i < filmsList.length; i++){ %>
             <div class="item-image"><img src="../public/filmsimages/<%= filmsList[i].posterFile %>" 
                 onclick="location.href='films/<%= filmsList[i].id %>'"
-            style="height:350px;width:250px;padding-left:10px;padding-bottom:5px;"></div>
+            style="height:350px;width:250px;padding-left:10px;padding-bottom:10px;border-radius:20px;"></div>
         </li>
         <% } %>
     </div>
