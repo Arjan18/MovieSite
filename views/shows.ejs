@@ -8,44 +8,91 @@
             <li><a href="/users/login">Login</a></li>
             <li><a href="/users/register">Register</a></li>
         </div>
-
         <div class="search-icon"><span class=""></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
 
 </nav>
-<main class="main-content"> 
-        <div class="container">
-            <div class="page">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <figure class="movie-poster"><img src="../../public/TVimages/<%=posterFile %>" alt="#"></figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h2 class="movie-title"><%= name %></h2>
-                            <div class="movie-summary">
-                                <p><%= overview %></p>
-                            </div>
-                            <ul class="movie-meta">
-                                <li><strong>Rating:</strong> 
-                                    <div class="star-rating" title="Rated 4.00 out of 5"><span style="width:80%"><strong class="rating">4.00</strong> out of 5</span></div>
-                                </li>
-                                <li><strong>No of Seasons: </strong><%= seasons %> mins</li>
-                                <li><strong>No of Episodes: </strong><%= episodes %> mins</li>
-                                <li><strong>Released: </strong> <%= releaseYear %></li>
-                                <li><strong>Genre: </strong><%= genre %></li>
-                            </ul>
 
-                            <ul class="starring">
-                                <li><strong>Created By:</strong> <%= creator %></li>
-                            </ul>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div> 
-    </main>
+<main class="main-content">
+	<header class="site-header">
+</header>
+	<div class="container">
+		<div class="page">
+			<div class="breadcrumbs">
+			</div>
+			<div class="content">
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="movie-poster"><img src="../../public/TVimages/<%=posterFile %>" alt="#"></figure>
+					</div>
+					<div class="col-md-6">
+						<h2 class="movie-title"><%= name %></h2>
+						<div class="movie-summary">
+							<p><%= overview %></p>
+						</div>
+						<ul class="movie-meta">
+							<li><strong>Star Rating: </strong> 
+								<div class="star-rating" title="Rated 4.00 out of 5"><span style="width:80%"><strong class="rating">4.00</strong> out of 5</span></div>
+							</li>
+							<li><strong>No of Seasons: </strong><%= seasons %></li>
+							<li><strong>No of Episodes: </strong><%= episodes %></li>
+							<li><strong>Release Year: </strong><%= releaseYear %></li>
+                            <li><strong>Genre: </strong><%= genre %></li>
+						</ul>
+
+						<ul class="starring">
+							<li><strong>Creator(s): </strong><%= creator %></li>
+							<li><strong>Rating: </strong><%= rating %></li>
+                            <li><strong>Network: </strong><%= network %></li>
+                            <li><a href="<%= trailer %>" target="_blank"><strong>Watch Trailer:</strong></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="entry-content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac pharetra libero. Integer in suscipit diam, sit amet eleifend nunc. Curabitur egestas nunc nulla, in aliquet risus efficitur quis. Vivamus facilisis est libero, vitae iaculis nulla cursus in. Suspendisse potenti. In et fringilla ipsum, quis varius quam. Morbi eleifend venenatis diam finibus vehicula. Suspendisse eu blandit metus. Sed feugiat pellentesque turpis, in lacinia ipsum. Vivamus nec luctus orci.</p>
+					<p>Aenean vehicula eget risus sit amet posuere. Maecenas id risus maximus, malesuada leo eget, pellentesque arcu. Phasellus vitae leo rhoncus, consectetur mauris vitae, lacinia quam. Nunc turpis erat, accumsan eget justo quis, auctor ultricies magna. Mauris sodales, risus sit amet hendrerit tincidunt, erat ante facilisis sapien, sit amet maximus neque massa a felis. Nullam consectetur justo massa, vel commodo metus gravida in. Aliquam erat volutpat. Nullam a lorem sed lorem euismod gravida a eu velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis ac ligula vel pharetra. Aenean vitae nulla sed dui volutpat euismod. Nam ex quam, consequat id rutrum sed, porttitor id lectus. Vestibulum venenatis consectetur justo ut sagittis. Duis dignissim tincidunt quam, nec pulvinar libero luctus nec. Morbi blandit nec lorem in ullamcorper.</p>
+					<p>Vestibulum et odio massa. Integer at odio ipsum. Proin vitae tristique nibh. Aenean semper ante sit amet ante ultricies tincidunt. Curabitur cursus, urna non ultricies posuere, dolor lacus cursus lorem, a dapibus nibh ex eget sem. Aliquam semper sagittis sapien a fermentum. Nullam sed iaculis lacus, et imperdiet risus. Praesent quis turpis ac nunc sodales tincidunt. Aliquam at leo odio. Sed a tempor nisl, et mattis felis. Nam mauris nunc, commodo ac orci ut, auctor viverra mauris.</p>
+					<p>Quisque nec justo vitae metus consectetur ultrices. Duis venenatis lorem massa, eu pulvinar quam faucibus sed. Nulla fringilla lorem sit amet sagittis mattis. Nunc in leo a odio mollis consectetur. Etiam ac nisl eget diam ullamcorper porta. Aliquam consectetur neque eget metus egestas sollicitudin. Curabitur ultrices urna et feugiat malesuada.</p>
+					<p>Nulla facilisi. Fusce sed dapibus leo, eu lobortis ante. Duis luctus mauris in ante semper, ut feugiat nisi condimentum. Nullam a odio et justo suscipit tempus. Vestibulum placerat dapibus quam, a egestas turpis efficitur id. Integer suscipit placerat placerat. Phasellus in lorem quis leo egestas accumsan. Nam et euismod ligula. Duis nec erat aliquam, sollicitudin diam non, ornare leo. Pellentesque augue leo, faucibus in nunc nec, tincidunt ullamcorper tortor. Phasellus aliquam condimentum elit. Nulla facilisi. Donec magna libero, bibendum eu faucibus et, mattis at felis. Integer turpis nibh, blandit nec elit vel, euismod laoreet quam. Donec vel ante nisi. Nunc luctus a tellus non.</p>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+</main>
 
 
+<script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+                
+menuBtn.onclick = ()=>{
+    items.classList.add("active");
+    menuBtn.classList.add("hide");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}
+                    
+cancelBtn.onclick = ()=>{
+    items.classList.remove("active");
+    menuBtn.classList.remove("hide");
+    searchBtn.classList.remove("hide");
+    cancelBtn.classList.remove("show");
+    cancelBtn.style.color = "#c96567";
+    form.classList.remove("active");
+}
 
-
+searchBtn.onclick = ()=>{
+    form.classList.add("active");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}
+</script>
+                    
+<!--footer-->
+<footer>
+    <p>&copy; Copyright 2020 - MovieSite Inc</p>
+</footer>
