@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 
-
 //TV Model
 const Show = require('../models/Television');
 
@@ -55,20 +54,18 @@ router.get("/addshows", function(req, res){
 });
 
 router.post("/addshows", (req, res) =>{
-    var data = req.body;
+var data = req.body;
 
-    //a variable representation of the files
-    var imageFile = req.files.imagefile;
+var imageFile = req.files.imagefile;
 
-    //Using the files to call upon the method to move that file to a folder
-    imageFile.mv("public/TVimages/" + imageFile.name, function(error){
-        if(error){
-            console.log("Couldn't upload the image file");
-            console.log(error);
-        }else{
-            console.log("Image file succesfully uploaded.");
-        }
-    });
+imageFile.mv("public/TVimages/" + imageFile.name, function(error){
+    if(error){
+        console.log("Couldn't upload the image file");
+        console.log(error);
+    }else{
+        console.log("Image file succesfully uploaded.");
+    }
+});
     
     Show.create({
         name: data.name,

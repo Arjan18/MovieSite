@@ -4,12 +4,12 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 
-
 //Film Model
 const Film = require('../models/Film');
 
 // Film Page
 router.get('/films', (req, res) => res.render('films'));
+
 
 router.get("/films/:id", function (req, res) {
     var id = req.params.id;
@@ -55,18 +55,16 @@ router.get("/addfilm", function(req, res){
 router.post("/addfilm", (req, res) =>{
     var data = req.body;
 
-    //a variable representation of the files
-    var imageFile = req.files.imagefile;
+var imageFile = req.files.imagefile;
 
-    //Using the files to call upon the method to move that file to a folder
-    imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
-        if(error){
-            console.log("Couldn't upload the image file");
-            console.log(error);
-        }else{
-            console.log("Image file succesfully uploaded.");
-        }
-    });
+imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
+    if(error){
+        console.log("Couldn't upload the image file");
+        console.log(error);
+    }else{
+        console.log("Image file succesfully uploaded.");
+    }
+});
     
     Film.create({
         name: data.name,

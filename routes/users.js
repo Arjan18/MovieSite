@@ -42,7 +42,7 @@ router.post('/register', (req, res) => {
           password2
         });
       } else {
-          //Validation Passing
+        //Validation Passing
         User.findOne({ email: email }).then(user => {
           if (user) {
             errors.push({ msg: 'Email has already been registered' });
@@ -99,7 +99,5 @@ router.get('/logout', (req, res) => {
   req.flash('success_msg', 'You are logged out');
   res.redirect('/users/login');
 });
-
-
 
 module.exports = router;

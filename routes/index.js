@@ -29,6 +29,4 @@ router.get('/profile', ensureAuthenticated, (req, res) =>
   })
 );
 
-
-
 module.exports = router;

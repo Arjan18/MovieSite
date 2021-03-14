@@ -13,7 +13,6 @@ const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/users');
 
-
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
@@ -27,8 +26,7 @@ io.on('connection', socket => {
 
   socket.join(user.room);
 
-
-   // Welcome current user
+  // Welcome current user
   socket.emit('message', formatMessage(botName, 'Welcome to ChatRoom'));
 
   //Shows when a user connects - Broadcast.emit shows message to everyone apart from user themselves
@@ -83,8 +81,6 @@ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
-
-
 //BodyParser
 app.use(express.urlencoded({ extended: false }));
 
@@ -120,10 +116,8 @@ app.use('/users', require('./routes/users'));
 app.use('/films', require('./routes/films'));
 app.use('/shows', require('./routes/shows'));
 
-
 //TO ACCESS HTML FILES
 app.use(express.static(__dirname));
-
 
 const PORT = process.env.PORT || 5000;
 
