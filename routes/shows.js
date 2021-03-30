@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
 //TV Model
 const Show = require('../models/Television');
@@ -10,14 +11,14 @@ const Show = require('../models/Television');
 // TV Page
 router.get('/shows', (req, res) => res.render('shows'));
 
-router.get("/shows/:id", function (req, res) {
+router.get("/shows/:id", ensureAuthenticated, function (req, res) {
     var id = req.params.id;
-
     Show.findById(id, function(error, foundShow){
         if(error){
             console.log("Couldn't find TV Show with that id:");
         }else{
             res.render("shows", {
+                user: req.user,
                 name: foundShow.name,
                 overview: foundShow.overview,
                 seasons: foundShow.seasons,
@@ -34,15 +35,15 @@ router.get("/shows/:id", function (req, res) {
     });
 });
  
-router.get("/ShowList", function (req, res) {
- 
+router.get("/ShowList", ensureAuthenticated, function (req, res) {
     Show.find({}, function(error, shows){
         if(error){
             console.log("There was a problem retrieving all of the Show from the database.");
             console.log(error);
         }else{
             res.render("ShowList", {
-                showsList: shows
+                showsList: shows,
+                user: req.user //added
             });
         }
     });

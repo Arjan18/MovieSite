@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
 //Film Model
 const Film = require('../models/Film');
@@ -10,8 +11,7 @@ const Film = require('../models/Film');
 // Film Page
 router.get('/films', (req, res) => res.render('films'));
 
-
-router.get("/films/:id", function (req, res) {
+router.get("/films/:id", ensureAuthenticated, function (req, res) {
     var id = req.params.id;
 
     Film.findById(id, function(error, foundFilm){
@@ -19,6 +19,7 @@ router.get("/films/:id", function (req, res) {
             console.log("Couldn't find Film with that id:");
         }else{
             res.render("films", {
+                user: req.user,
                 name: foundFilm.name,
                 synopsis: foundFilm.synopsis,
                 runTime: foundFilm.runTime,
@@ -27,25 +28,24 @@ router.get("/films/:id", function (req, res) {
                 director: foundFilm.director,
                 rating: foundFilm.rating,
                 trailer: foundFilm.trailer,
-                posterFile: foundFilm.posterFile
+                posterFile: foundFilm.posterFile,
             });
         }
     });
 });
  
-router.get("/FilmList", function (req, res) {
- 
+router.get("/FilmList", ensureAuthenticated, function (req, res) {
     Film.find({}, function(error, films){
         if(error){
             console.log("There was a problem retrieving all of the Films from the database.");
             console.log(error);
         }else{
             res.render("FilmList", {
-                filmsList: films
+                filmsList: films,
+                user: req.user
             });
         }
     });
-
 });
 
 router.get("/addfilm", function(req, res){

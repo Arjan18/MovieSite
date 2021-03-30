@@ -12,7 +12,7 @@ router.get('/homepage', ensureAuthenticated, (req, res) =>
   })
 );
 
-//ChatApp
+//ChatApp Pages
 router.get('/chatHome', ensureAuthenticated, (req, res) =>
   res.render('chatHome', {
     user: req.user
@@ -32,16 +32,5 @@ router.get('/profile', ensureAuthenticated, (req, res) =>
 );
 
 
-router.use('/shows/ShowList', ensureAuthenticated, (req, res) =>
-  res.render('ShowList', {
-    user: req.user
-  })
-);
-
-router.use('/shows/shows', ensureAuthenticated, (req, res) =>
-  res.render('shows', {
-    user: req.user
-  })
-);
 
 module.exports = router;
