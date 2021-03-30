@@ -23,31 +23,22 @@ router.get('/chat', ensureAuthenticated, (req, res) =>
     user: req.user
   })
 );
+
+//Profile Page
 router.get('/profile', ensureAuthenticated, (req, res) =>
   res.render('profile', {
     user: req.user
   })
 );
 
-router.get('/films/FilmList', ensureAuthenticated, (req, res) =>
-  res.render('FilmList', {
-    user: req.user
-  })
-);
 
-router.get('/films/films', ensureAuthenticated, (req, res) =>
-  res.render('films', {
-    user: req.user
-  })
-);
-
-router.get('/shows/ShowList', ensureAuthenticated, (req, res) =>
+router.use('/shows/ShowList', ensureAuthenticated, (req, res) =>
   res.render('ShowList', {
     user: req.user
   })
 );
 
-router.get('/shows/shows', ensureAuthenticated, (req, res) =>
+router.use('/shows/shows', ensureAuthenticated, (req, res) =>
   res.render('shows', {
     user: req.user
   })
