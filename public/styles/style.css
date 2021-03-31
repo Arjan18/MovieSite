@@ -460,14 +460,14 @@ a {
 
 /* Chat Page */
 
-.chat-container {
+.ChatContainer {
 	max-width: 1100px;
 	background: #fff;
 	margin: 58px auto;
 	overflow: hidden;
 }
 
-.chat-header {
+.ChatHeader {
 	background: var(--dark-color-a);
 	color: #fff;
 	border-top-left-radius: 5px;
@@ -478,30 +478,30 @@ a {
 	justify-content: space-between;
 }
 
-.chat-main {
+.ChatMain {
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 }
 
-.chat-sidebar {
+.ChatSidebar {
 	background: var(--dark-color-b);
 	color: #fff;
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
 }
 
-.chat-sidebar h2 {
+.ChatSidebar h2 {
 	font-size: 20px;
 	background: rgba(0, 0, 0, 0.1);
 	padding: 10px;
 	margin-bottom: 20px;
 }
 
-.chat-sidebar h3 {
+.ChatSidebar h3 {
 	margin-bottom: 15px;
 }
 
-.chat-sidebar ul li {
+.ChatSidebar ul li {
 	padding: 10px 0;
 }
 
@@ -530,16 +530,16 @@ a {
 	color: #777;
 }
 
-.chat-form-container {
+.ChatForm-container {
 	padding: 20px 30px;
 	background-color: var(--dark-color-a);
 }
 
-.chat-form-container form {
+.ChatForm-container form {
 	display: flex;
 }
 
-.chat-form-container input[type='text'] {
+.ChatForm-container input[type='text'] {
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
@@ -547,13 +547,13 @@ a {
 }
 
 /* Join Page */
-.join-container {
+.JoinContainer {
 	max-width: 500px;
 	margin: 80px auto;
 	color: #fff;
 }
 
-.join-header {
+.JoinHeader {
 	text-align: center;
 	padding: 20px;
 	background: var(--dark-color-a);
@@ -561,49 +561,49 @@ a {
 	border-top-right-radius: 5px;
 }
 
-.join-main {
+.JoinMain {
 	padding: 30px 40px;
 	background: var(--dark-color-b);
 }
 
-.join-main p {
+.JoinMain p {
 	margin-bottom: 20px;
 }
 
-.join-main .form-control {
+.JoinMain .form-control {
 	margin-bottom: 20px;
 }
 
-.join-main label {
+.JoinMain label {
 	display: block;
 	margin-bottom: 5px;
 }
 
-.join-main input[type='text'] {
+.JoinMain input[type='text'] {
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
 	width: 100%;
 }
 
-.join-main select {
+.JoinMain select {
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
 	width: 100%;
 }
 
-.join-main .btn {
+.JoinMain .btn {
 	margin-top: 20px;
 	width: 100%;
 }
 
 @media (max-width: 700px) {
-	.chat-main {
+	.ChatMain {
 		display: block;
-	}
+}
 
-	.chat-sidebar {
+	.ChatSidebar {
 		display: none;
 	}
 }

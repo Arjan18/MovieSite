@@ -43,7 +43,7 @@ router.get("/ShowList", AuthenticatedUser, function (req, res) {
         }else{
             res.render("ShowList", {
                 showsList: shows,
-                user: req.user //added
+                user: req.user
             });
         }
     });
