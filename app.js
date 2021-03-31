@@ -67,7 +67,7 @@ io.on('connection', socket => {
 
 
 //Datbase Connection
-const db = require('./config/keys').MongoURI
+const db = require('./config/db').MongoURI
 
 // Passport Config
 require('./config/passport')(passport);

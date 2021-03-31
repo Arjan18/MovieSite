@@ -109,7 +109,7 @@ nav .cancel-icon{
     background-color: #314455;
 }
 
-.showcase-box{
+.SliderBox{
     width:430px;
     height: 250px;
     box-shadow: 5px 15px 30px rgba(0,0,0,0.3);
@@ -118,7 +118,7 @@ nav .cancel-icon{
     overflow: hidden;
 }
 
-.showcase-box img{
+.SliderBox img{
     width:100%;
     height: 100%;
     object-fit: cover;
@@ -129,19 +129,19 @@ nav .cancel-icon{
     overflow: visible !important;
 }
 
-#latest{
+#MovieSlider{
     border-top: 1px solid rgba(53,53,53,0.1);
     background-color: #314455;
 }
 
-.latest-heading{
+.MovieSlider-heading{
     margin: 30px 30px 0px 30px;
     font-weight: 500;
     font-size: 1.3rem;  
     color: #fff;
 }
 
-.latest-box{
+.MovieBox{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,11 +152,11 @@ nav .cancel-icon{
     width:200px;
 }
 
-.latest-b-img{
+.movie-img{
     width:100%;
 }
 
-.latest-b-img img{
+.movie-img img{
     width: 100%;
     height: 300px;
     object-fit: cover;  
@@ -297,25 +297,15 @@ footer p{
 }
 
 @media(max-width:680px){
-    .showcase-box{
+    .SliderBox{
         max-width: 300px;
         height: 180px;
         margin: 10px;
     }
 
-    .latest-box{
+    .MovieBox{
         width:190px;
         margin: 20px 5px;
-    }
-
-    .movies-box{
-        flex-direction: row;
-        width:90%;
-        border: 1px solid rgba(0,0,0,0.2);
-    }
-
-    .movies-box a{
-        width:65%;
     }
 
     footer{
@@ -325,13 +315,6 @@ footer p{
 }
 
 @media(max-width:400px){
-    .movies-box a,.movies-box{
-        width: 100%;
-    }
-
-    .movies-box{
-        flex-direction: column;
-    }
 
     .logo img{
         height: 30px;

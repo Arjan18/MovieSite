@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
-const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+const { AuthenticatedUser, forwardAuthenticated } = require('../config/authentication');
 
 //TV Model
 const Show = require('../models/Television');
@@ -11,7 +11,7 @@ const Show = require('../models/Television');
 // TV Page
 router.get('/shows', (req, res) => res.render('shows'));
 
-router.get("/shows/:id", ensureAuthenticated, function (req, res) {
+router.get("/shows/:id", AuthenticatedUser, function (req, res) {
     var id = req.params.id;
     Show.findById(id, function(error, foundShow){
         if(error){
@@ -35,7 +35,7 @@ router.get("/shows/:id", ensureAuthenticated, function (req, res) {
     });
 });
  
-router.get("/ShowList", ensureAuthenticated, function (req, res) {
+router.get("/ShowList", AuthenticatedUser, function (req, res) {
     Show.find({}, function(error, shows){
         if(error){
             console.log("There was a problem retrieving all of the Show from the database.");

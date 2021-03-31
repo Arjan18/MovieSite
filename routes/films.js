@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
-const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+const { AuthenticatedUser, forwardAuthenticated } = require('../config/authentication');
 
 //Film Model
 const Film = require('../models/Film');
@@ -11,7 +11,7 @@ const Film = require('../models/Film');
 // Film Page
 router.get('/films', (req, res) => res.render('films'));
 
-router.get("/films/:id", ensureAuthenticated, function (req, res) {
+router.get("/films/:id", AuthenticatedUser, function (req, res) {
     var id = req.params.id;
 
     Film.findById(id, function(error, foundFilm){
@@ -34,7 +34,7 @@ router.get("/films/:id", ensureAuthenticated, function (req, res) {
     });
 });
  
-router.get("/FilmList", ensureAuthenticated, function (req, res) {
+router.get("/FilmList", AuthenticatedUser, function (req, res) {
     Film.find({}, function(error, films){
         if(error){
             console.log("There was a problem retrieving all of the Films from the database.");
