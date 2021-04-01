@@ -903,11 +903,13 @@ ul, ol {
 	visibility: hidden;
 	opacity: 0;
 }
+
 .trailer video{
 	max-width: 900px;
 	outline: none;
 	position: relative;
 }
+
 .close{
 	position: absolute;
 	top: 30px;
@@ -916,11 +918,13 @@ ul, ol {
 	font-size: 42px;
 	cursor: pointer;
 }
+
 @media (max-width: 901px){
 	.trailer video{
 		max-width: 90%;
 	}
 }
+
 button{
 	margin: 10px 0;
 	width: 100%;
@@ -932,6 +936,7 @@ button{
 	border-radius: 5px;
 	cursor: pointer;
 }
+
 button:hover{
 	color: #c96567;
 	background: #314455;

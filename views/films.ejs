@@ -47,10 +47,10 @@
 						</ul>
 
 						<div class="trailer">
-						<iframe width="700" height="400"
-						src="<%= trailer %>">
-						</iframe>
-						<span class="close">&times;</span>
+							<iframe width="700" height="400"
+							src="<%= trailer %>">
+							</iframe>
+							<span class="close">&times;</span>
 						</div>
 					</div>
 				</div>
@@ -76,23 +76,23 @@
     const items = document.querySelector(".nav-items");
     const form = document.querySelector("form");
 
-	const button = document.querySelector("button");
-	const close = document.querySelector(".close");
-	const trailer = document.querySelector(".trailer");
-	const video = document.querySelector("video");
+const button = document.querySelector("button");
+const close = document.querySelector(".close");
+const trailer = document.querySelector(".trailer");
+const video = document.querySelector("video");
 
-	button.addEventListener('click', ()=>{
-		trailer.style.visibility = "visible";
-		trailer.style.opacity = 1;
-	});
+button.addEventListener('click', ()=>{
+	trailer.style.visibility = "visible";
+	trailer.style.opacity = 1;
+});
 
-	close.addEventListener('click', ()=>{
-		trailer.style.visibility = "hidden";
-		trailer.style.opacity = 0;
+close.addEventListener('click', ()=>{
+	trailer.style.visibility = "hidden";
+	trailer.style.opacity = 0;
 
-		video.pause();
-		video.currentTime = 0;
-	});
+	video.pause();
+	video.currentTime = 0;
+});
 			
 menuBtn.onclick = ()=>{
     items.classList.add("active");
