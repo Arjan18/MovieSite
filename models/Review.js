@@ -1,11 +1,7 @@
 const mongoose = require('mongoose')
 
 const reviewSchema = new mongoose.Schema({
-    film: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Film',
-    },
-    from: {
+    written_by: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     },
@@ -13,7 +9,6 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
 });
 
 const Review = mongoose.model("Review", reviewSchema);
