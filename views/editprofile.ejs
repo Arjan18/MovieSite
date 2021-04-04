@@ -5,7 +5,7 @@
       <li><a href="/homepage">Home</a></li>
       <li><a href="/films/FilmList">Movies</a></li>
       <li><a href="/shows/ShowList">Television</a></li>
-      <li><a href="/profile"><%= user.username %></a></li>
+      <li><a href="/editprofile"><%= user.username %></a></li>
       <li><a href="/chatHome">Chat App</a></li>
       <li><a href="../users/logout">Logout</a></li>
     </div>
@@ -18,7 +18,7 @@
     <div class="wrapper">
       <div class="title"><span>Edit your Profile</span></div>
       <%- include ("./partials/messages"); %>
-      <form action="/users/edit"+user.id method="PUT">
+      <form action="/users/editprofile" method="POST">
         <div class="row">
             <i class="fas fa-user"></i>
             <input type="text" class="form-control" value="<%= user.name %>" 

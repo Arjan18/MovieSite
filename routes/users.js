@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const { AuthenticatedUser, forwardAuthenticated } = require('../config/authentication');
 
 //User Model
 const User = require('../models/User');
@@ -12,6 +13,11 @@ router.get('/login', (req, res) => res.render('login'));
 // Register Page
 router.get('/register', (req, res) => res.render('register'));
 
+router.get('/editprofile', AuthenticatedUser, (req, res) =>
+  res.render('editprofile', {
+    user: req.user
+  })
+);
 //Register Handle
 router.post('/register', (req, res) => {
     const{ name, email, username, password, password2 } = req.body;
@@ -98,6 +104,36 @@ router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'You have successfully logged out');
   res.redirect('/users/login');
+});
+
+router.post('/editprofile', AuthenticatedUser, (req, res) => {
+  const { name, username, email } = req.body;
+
+      User.findByIdAndUpdate(
+        (req.body.user._id), 
+        {
+            $set: {
+              name: name, 
+              username: username, 
+              email: email, 
+            },
+        },
+        function(err, doc) {
+          if (err) {
+              res.status(500).send("Unable to edit this user");
+          } else {
+              const updatedUser = 
+              {
+                _id: req.body.user._id,
+                title: title,
+                name: name, 
+                username: username,
+                email: email, 
+              }
+              res.status(200).send(updatedUser);            
+          }
+        }
+      );
 });
 
 module.exports = router;
