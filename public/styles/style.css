@@ -924,8 +924,7 @@ ul, ol {
 		max-width: 90%;
 	}
 }
-
-button{
+.button1{
 	margin: 10px 0;
 	width: 100%;
 	padding: 10px;
@@ -937,7 +936,7 @@ button{
 	cursor: pointer;
 }
 
-button:hover{
+.button1:hover{
 	color: #c96567;
 	background: #314455;
 }
