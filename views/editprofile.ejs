@@ -18,20 +18,20 @@
     <div class="wrapper">
       <div class="title"><span>Edit your Profile</span></div>
       <%- include ("./partials/messages"); %>
-      <form action="/users/editprofile" method="POST">
+      <form action="/users/editprofile" method="PUT">
         <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" class="form-control" value="<%= user.name %>" 
+            <input type="text" placeholder="Name" class="form-control" value="<%= user.name %>" 
             name="name"> 
           </div>
           <div class="row">
             <i class="fas fa-at"></i>
-            <input type="text" class="form-control" value="<%= user.email %>" 
+            <input type="text" placeholder="Email Address" class="form-control" value="<%= user.email %>" 
             name="email"> 
           </div>
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" class="form-control" value="<%= user.username %>" 
+            <input type="text" placeholder="Username" class="form-control" value="<%= user.username %>" 
             name="username"> 
           </div>
 

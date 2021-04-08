@@ -41,6 +41,9 @@ const filmSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review',
     },
+    box_office: {
+        type: String,
+    },
 });
 
 const Film = mongoose.model("Film", filmSchema);

@@ -28,6 +28,7 @@ router.get("/films/:id", AuthenticatedUser, function (req, res) {
                 director: foundFilm.director,
                 rating: foundFilm.rating,
                 trailer: foundFilm.trailer,
+                box_office: foundFilm.box_office,
                 posterFile: foundFilm.posterFile,
             });
         }
@@ -75,6 +76,7 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
         trailer: data.trailer,
         director: data.director,
         rating: data.rating,
+        box_office: data.box_office,
         posterFile: imageFile.name
     }, function(error, data){
         if(error){

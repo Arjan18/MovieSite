@@ -106,11 +106,11 @@ router.get('/logout', (req, res) => {
   res.redirect('/users/login');
 });
 
-router.post('/editprofile', AuthenticatedUser, (req, res) => {
+router.put('/editprofile', AuthenticatedUser, (req, res) => {
   const { name, username, email } = req.body;
 
       User.findByIdAndUpdate(
-        (req.body.user._id), 
+        (req.body.user_id), 
         {
             $set: {
               name: name, 
@@ -120,18 +120,16 @@ router.post('/editprofile', AuthenticatedUser, (req, res) => {
         },
         function(err, doc) {
           if (err) {
-              res.status(500).send("Unable to edit this user");
+            errors.push({ msg: 'Unable to edit user' });
           } else {
               const updatedUser = 
               {
-                _id: req.body.user._id,
-                title: title,
                 name: name, 
                 username: username,
                 email: email, 
               }
-              res.status(200).send(updatedUser);            
-          }
+              res.redirect('/users/login');
+            }
         }
       );
 });
