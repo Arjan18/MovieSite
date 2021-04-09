@@ -24,11 +24,4 @@ router.get('/chat', AuthenticatedUser, (req, res) =>
   })
 );
 
-//Profile Page
-// router.get('/editprofile', AuthenticatedUser, (req, res) =>
-//   res.render('editprofile', {
-//     user: req.user
-//   })
-// );
-
 module.exports = router;
