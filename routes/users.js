@@ -115,7 +115,8 @@ router.post('/editprofile', AuthenticatedUser, (req, res) => {
       email: req.body.email
     },
     {new: true},(err,doc)=>{
-      res.redirect('/homepage');
+      req.flash('success_msg', 'You have successfully updated your profile');
+      res.redirect('/users/editprofile');
   });   
 });
 
