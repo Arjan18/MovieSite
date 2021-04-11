@@ -18,7 +18,7 @@
     <div class="wrapper">
       <div class="title"><span>Edit your Profile</span></div>
       <%- include ("./partials/messages"); %>
-      <form action="/users/editprofile" method="PUT">
+      <form action="/users/editprofile" method="POST">
         <div class="row">
             <i class="fas fa-user"></i>
             <input type="text" placeholder="Name" class="form-control" value="<%= user.name %>" 

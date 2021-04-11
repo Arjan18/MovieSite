@@ -18,6 +18,7 @@ router.get('/editprofile', AuthenticatedUser, (req, res) =>
     user: req.user
   })
 );
+
 //Register Handle
 router.post('/register', (req, res) => {
     const{ name, email, username, password, password2 } = req.body;
@@ -106,32 +107,16 @@ router.get('/logout', (req, res) => {
   res.redirect('/users/login');
 });
 
-router.put('/editprofile', AuthenticatedUser, (req, res) => {
-  const { name, username, email } = req.body;
-
-      User.findByIdAndUpdate(
-        (req.body.user_id), 
-        {
-            $set: {
-              name: name, 
-              username: username, 
-              email: email, 
-            },
-        },
-        function(err, doc) {
-          if (err) {
-            errors.push({ msg: 'Unable to edit user' });
-          } else {
-              const updatedUser = 
-              {
-                name: name, 
-                username: username,
-                email: email, 
-              }
-              res.redirect('/users/login');
-            }
-        }
-      );
+router.post('/editprofile', AuthenticatedUser, (req, res) => {
+  User.findOneAndUpdate({_id:req.user.id},
+    {
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email
+    },
+    {new: true},(err,doc)=>{
+      res.redirect('/homepage');
+  });   
 });
 
 module.exports = router;
