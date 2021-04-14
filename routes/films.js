@@ -7,6 +7,7 @@ const { AuthenticatedUser, forwardAuthenticated } = require('../config/authentic
 
 //Film Model
 const Film = require('../models/Film');
+const Review = require('../models/Review');
 
 // Film Page
 router.get('/films', (req, res) => res.render('films'));
@@ -89,5 +90,28 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
     });
     res.redirect("/films/FilmList");
 });
+
+
+router.post("/addreview", AuthenticatedUser, (req, res) =>{
+    var data = req.body;
+
+    Review.create({
+        comment: data.comment,
+        film: req.film_id,
+        written_by: req.user_id,
+
+    }, function(error, data){
+        if(error){
+            console.log("There was a problem adding this Review to the database");
+        }else{
+            console.log("Review added to database");
+            console.log(data);
+        }
+
+    });
+    res.redirect("/films/FilmList");
+
+});
+
 
 module.exports = router;
