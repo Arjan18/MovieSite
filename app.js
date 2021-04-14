@@ -93,7 +93,7 @@ app.use(
     })
   );
 
-  app.use(fileUpload());
+app.use(fileUpload());
 
 // Passport middleware
 app.use(passport.initialize());
@@ -108,7 +108,7 @@ app.use(function(req, res, next) {
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
     next();
-  });
+});
 
 //Routes
 app.use('/', require('./routes/index'));

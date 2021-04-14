@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
 const fileUpload = require('express-fileupload');
-const { AuthenticatedUser, forwardAuthenticated } = require('../config/authentication');
+const { AuthenticatedUser } = require('../config/authentication');
 
 //Film Model
 const Film = require('../models/Film');
@@ -94,7 +92,6 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
 
 router.post("/addreview", AuthenticatedUser, (req, res) =>{
     var data = req.body;
-
     Review.create({
         comment: data.comment,
         film: req.film_id,
@@ -110,8 +107,6 @@ router.post("/addreview", AuthenticatedUser, (req, res) =>{
 
     });
     res.redirect("/films/FilmList");
-
 });
-
 
 module.exports = router;

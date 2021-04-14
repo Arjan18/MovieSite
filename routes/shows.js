@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
 const fileUpload = require('express-fileupload');
-const { AuthenticatedUser, forwardAuthenticated } = require('../config/authentication');
+const { AuthenticatedUser } = require('../config/authentication');
 
 //TV Model
 const Show = require('../models/Television');
