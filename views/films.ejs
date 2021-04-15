@@ -55,7 +55,9 @@
 						</div>
 
 						<form action="/films/addreview" method="POST">
-						<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter Review Here"></textarea>
+						<input type="hidden" name="filmID" value="<%= _id %>">
+
+						<textarea rows="4" cols="50" name="comment" placeholder="Enter Review Here"></textarea>
 							<input type="submit">
 						  </form>						 
 					</div>

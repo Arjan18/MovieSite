@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fileUpload = require('express-fileupload');
 const { AuthenticatedUser } = require('../config/authentication');
+var ObjectId = require("mongodb").ObjectId;
 
 //Film Model
 const Film = require('../models/Film');
@@ -19,6 +20,7 @@ router.get("/films/:id", AuthenticatedUser, function (req, res) {
         }else{
             res.render("films", {
                 user: req.user,
+                _id: foundFilm._id,
                 name: foundFilm.name,
                 synopsis: foundFilm.synopsis,
                 runTime: foundFilm.runTime,
@@ -33,7 +35,7 @@ router.get("/films/:id", AuthenticatedUser, function (req, res) {
         }
     });
 });
- 
+
 router.get("/FilmList", AuthenticatedUser, function (req, res) {
     Film.find({}, function(error, films){
         if(error){
@@ -89,14 +91,14 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
     res.redirect("/films/FilmList");
 });
 
-
 router.post("/addreview", AuthenticatedUser, (req, res) =>{
     var data = req.body;
+    let filmID = data.filmID;
+    var film_id = new ObjectId(filmID);
     Review.create({
         comment: data.comment,
-        film: req.film_id,
-        written_by: req.user_id,
-
+        film: film_id,
+        written_by: req.user,
     }, function(error, data){
         if(error){
             console.log("There was a problem adding this Review to the database");
@@ -104,7 +106,6 @@ router.post("/addreview", AuthenticatedUser, (req, res) =>{
             console.log("Review added to database");
             console.log(data);
         }
-
     });
     res.redirect("/films/FilmList");
 });
