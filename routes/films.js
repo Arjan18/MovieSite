@@ -29,6 +29,7 @@ router.get("/films/:id", AuthenticatedUser, function (req, res) {
                 rating: foundFilm.rating,
                 trailer: foundFilm.trailer,
                 box_office: foundFilm.box_office,
+                reviews: foundFilm.reviews,
                 posterFile: foundFilm.posterFile,
             });
         }
@@ -67,6 +68,7 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
 });
     let reviewID = data.reviewID;
     var review_id = new ObjectId(reviewID);
+
     Film.create({
         name: data.name,
         synopsis: data.synopsis,
@@ -94,6 +96,7 @@ router.post("/addreview", AuthenticatedUser, (req, res) =>{
     var data = req.body;
     let filmID = data.filmID;
     var film_id = new ObjectId(filmID);
+
     Review.create({
         comment: data.comment,
         film: film_id,
@@ -105,6 +108,7 @@ router.post("/addreview", AuthenticatedUser, (req, res) =>{
             console.log("Review added to database");
             console.log(data);
         }
+        
     });
     res.redirect("/films/FilmList");
 });
