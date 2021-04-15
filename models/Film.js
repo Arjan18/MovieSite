@@ -37,7 +37,7 @@ const filmSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Reviews: {
+    reviews: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review',
     },

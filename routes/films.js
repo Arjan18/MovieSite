@@ -13,7 +13,6 @@ router.get('/films', (req, res) => res.render('films'));
 
 router.get("/films/:id", AuthenticatedUser, function (req, res) {
     var id = req.params.id;
-
     Film.findById(id, function(error, foundFilm){
         if(error){
             console.log("Couldn't find Film with that id:");
@@ -56,8 +55,7 @@ router.get("/addfilm", function(req, res){
 
 router.post("/addfilm", (req, res) =>{
     var data = req.body;
-
-var imageFile = req.files.imagefile;
+    var imageFile = req.files.imagefile;
 
 imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
     if(error){
@@ -67,7 +65,8 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
         console.log("Image file succesfully uploaded.");
     }
 });
-    
+    let reviewID = data.reviewID;
+    var review_id = new ObjectId(reviewID);
     Film.create({
         name: data.name,
         synopsis: data.synopsis,
@@ -78,6 +77,7 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
         director: data.director,
         rating: data.rating,
         box_office: data.box_office,
+        reviews: review_id,
         posterFile: imageFile.name
     }, function(error, data){
         if(error){
@@ -86,7 +86,6 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
             console.log("Film added to database");
             console.log(data);
         }
-
     });
     res.redirect("/films/FilmList");
 });
