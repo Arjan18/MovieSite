@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/61b55cfb-d3c4-4b03-8d74-738a05306bf8/resourceGroups/AppServiceQS-rg/providers/Microsoft.Web/sites/Movie-Site",
+    "appService.deploySubpath": "."
+}
