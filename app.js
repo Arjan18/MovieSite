@@ -65,17 +65,15 @@ io.on('connection', socket => {
   });
 });
 
-
-//Datbase Connection
-const db = require('./config/db').MongoURI
-
 // Passport Config
 require('./config/passport')(passport);
 
-//Mongo Connection
+//Datbase Connection
+const db = require('./config/db').MongoURI
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
+
 
 //EJS
 app.use(expressLayouts);
