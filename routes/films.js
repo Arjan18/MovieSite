@@ -29,7 +29,6 @@ router.get("/films/:id", AuthenticatedUser, function (req, res) {
                 rating: foundFilm.rating,
                 trailer: foundFilm.trailer,
                 box_office: foundFilm.box_office,
-                reviews: foundFilm.reviews,
                 posterFile: foundFilm.posterFile,
             });
         }
@@ -66,8 +65,6 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
         console.log("Image file succesfully uploaded.");
     }
 });
-    let reviewID = data.reviewID;
-    var review_id = new ObjectId(reviewID);
 
     Film.create({
         name: data.name,
@@ -79,7 +76,6 @@ imageFile.mv("public/filmsimages/" + imageFile.name, function(error){
         director: data.director,
         rating: data.rating,
         box_office: data.box_office,
-        reviews: review_id,
         posterFile: imageFile.name
     }, function(error, data){
         if(error){
