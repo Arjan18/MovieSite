@@ -27,7 +27,7 @@ io.on('connection', socket => {
   socket.join(user.room);
 
   // Welcome current user
-  socket.emit('message', formatMessage(botName, 'Welcome to MovieSite ChatRoom'));
+  socket.emit('message', formatMessage(botName, 'Welcome to the MovieSite ChatRoom'));
 
   //Shows when a user connects - Broadcast.emit shows message to everyone apart from user themselves
   socket.broadcast

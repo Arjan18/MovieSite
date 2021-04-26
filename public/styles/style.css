@@ -497,7 +497,7 @@ a {
 
 .ChatSidebar h2 {
 	font-size: 20px;
-	background: rgba(0, 0, 0, 0.1);
+	background: var(--dark-color-b);
 	padding: 10px;
 	margin-bottom: 20px;
 }
