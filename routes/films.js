@@ -13,6 +13,16 @@ router.get('/films', (req, res) => res.render('films'));
 
 router.get("/films/:id", AuthenticatedUser, function (req, res) {
     var id = req.params.id;
+//     let filmID = req.params.id;
+//     var film_id = new ObjectId(filmID);
+
+//     Review.find({"film": film_id}, function(error,foundReview){
+//         res.render("reviewList", {
+//         _id: foundReview._id,
+//         written_by: foundReview.written_by,
+//     }
+// );
+
     Film.findById(id, function(error, foundFilm){
         if(error){
             console.log("Couldn't find Film with that id:");
@@ -34,6 +44,7 @@ router.get("/films/:id", AuthenticatedUser, function (req, res) {
         }
     });
 });
+// });
 
 router.get("/FilmList", AuthenticatedUser, function (req, res) {
     Film.find({}, function(error, films){
